@@ -1,0 +1,23 @@
+{% extends '../layout.html' %}
+
+{% load static %}
+
+{% block title %}
+    {{ block.super }} shop
+{% endblock %}
+
+{% block extra_head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'shop/shop.css' %}" />
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <img src="{% static 'logo.png' %}" alt="shop logo image">
+    <h2>shop in 217230120 site </h2>
+{% endblock %}
+
+{% block extra_body %}
+    {{ block.super }}
+    <script src="{% static 'shop/shop.js' %}"></script>
+{% endblock %}

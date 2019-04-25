@@ -1,0 +1,62 @@
+{% extends './layout.html' %}
+{% block content %}
+{#    <a href="/blog/">게시판 목록으로 돌아가기</a><br/><br/>#}
+    <a href="{% url 'shop:item_list' %}">게시판 목록으로 돌아가기</a><br/><br/>
+
+    <table>
+        <thead>
+            <th>필드</th><th>내용</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td width="10%">id:</td><td><input type="text" value={{ item.id }}></td>
+        </tr>
+        <tr>
+            <td>아이템:</td><td><input type="text" value="{{ item.name }}" style="width:500px;"></td>
+        </tr>
+        <tr>
+            <td>설명:</td><td><input type="text" value="{{ item.desc }}"  style="width:500px;"></td>
+        </tr>
+        <tr>
+            <td>사진:</td><td>        {% if item.photo %}
+            <img src="{{ item.photo.url }}" />
+        {% endif %}</td>
+        </tr>
+        <tr>
+            <td>게시 일시:</td><td><input type="text" value="{{ item.created_at }}" style="width:500px;"></td>
+        </tr>
+        <tr>
+            <td>수정 일시:</td><td><input type="text" value="{{ item.updated_at }}" style="width:500px;"></td>
+        </tr>
+        <tr>
+            <td>태그 집합:</td><td><input type="text" value="{{ item.tagged }}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <br/>
+    <br/>
+
+    <table>
+        <thead>
+            <th>id</th>
+            <th>후기</th>
+            <th>작성 일시</th>
+            <th>수정 일시</th>
+
+        </thead>
+        <tbody>
+        {% for c in item.reviews.all %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.message }}</td>
+                <td>{{ c.created_at }}</td>
+                <td>{{ c.updated }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> <br/>
+
+
+
+{% endblock %}

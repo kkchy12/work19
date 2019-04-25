@@ -1,0 +1,19 @@
+body {background-color: antiquewhite}
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+table td, table th {
+  border: 1px solid #8181F7;
+  padding: 8px;
+}
+table tr{background-color: #FFFFFF;}
+table tr:hover {background-color: #CED8F6;}
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #8181F7;
+  color: white;
+}

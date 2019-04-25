@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}217230120 정다연{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    {% block extra_head %}  {# 스타일시트 등을 위하여 #}{% endblock %}
+
+</head>
+<body>
+    {% block content %}
+        <h1>217230120 정다연's site</h1>
+    {% endblock %}
+
+    <hr/>
+    No &copy;! <img src="http://www.pngmart.com/files/8/Copyleft-PNG-Transparent-Picture.png" height="42" width="42" style="margin-bottom: -5px" />2019. logistex.
+
+    {% block extra_body %}  {# 자바스크립트 등을 위하여 #}
+        <script src="{% static 'main.js' %}"></script>
+    {% endblock %}
+</body>
+</html>
